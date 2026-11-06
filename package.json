@@ -3,6 +3,10 @@
   "displayName": "JunoPL",
   "description": "Syntax highligher for JunoPL",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sky1sBloo/juno-pl-vscode.git"
+  },
   "engines": {
     "vscode": "^1.138.0"
   },
@@ -26,8 +30,7 @@
           "junopl"
         ],
         "extensions": [
-          ".juno",
-          ""
+          ".juno"
         ],
         "configuration": "./language-configuration.json"
       }
@@ -43,7 +46,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "build": "npx vsce package"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
