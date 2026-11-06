@@ -1,0 +1,129 @@
+{
+    "name": "JunoPL",
+    "scopeName": "source.junopl",
+    "fileTypes": ["juno"],
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        {
+            "match": "\\b(to)\\s+(script|craft|nearby)\\b",
+            "captures": {
+                "1": { "name": "keyword.control.junopl" },
+                "2": { "name": "keyword.other.junopl" }
+            }
+        },
+        {
+            "match": "\\b(program)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": { "name": "keyword.other.junopl" },
+                "2": { "name": "entity.name.junopl" }
+            }
+        },
+        {
+            "match": "\\b(expr|instr)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": { "name": "storage.type.junopl" },
+                "2": { "name": "entity.name.function.junopl" }
+            }
+        },
+        {
+            "match": "\\b(on)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()",
+            "captures": {
+                "1": { "name": "keyword.control.junopl" },
+                "2": { "name": "entity.name.function.junopl" }
+            }
+        },
+        {
+            "match": "\\b(Math|String|Strings|Input|Lists|Vector|Game|Craft|Part|Camera|Nav|Altitude|Velocity|Orbit|Planet|Atmosphere|Fuel|Time|Performance|Terrain|ListOp|Raycast|Target|Misc)\\.([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": { "name": "support.class.junopl" },
+                "2": { "name": "support.function.junopl" }
+            }
+        },
+        {
+            "name": "keyword.control.junopl",
+            "match": "\\b(if|elif|else|for|from|to|by|repeat|while|break|do|on|emit)\\b"
+        },
+        {
+            "name": "storage.type.junopl",
+            "match": "\\b(var|list|expr|instr)\\b"
+        },
+        {
+            "name": "keyword.other.junopl",
+            "match": "\\b(program|import|craft|nearby)\\b"
+        },
+        {
+            "name": "keyword.operator.logical.junopl",
+            "match": "\\b(and|or|not)\\b"
+        },
+        {
+            "name": "constant.language.junopl",
+            "match": "\\b(true|false)\\b"
+        },
+        {
+            "name": "variable.language.junopl",
+            "match": "\\bdata\\b"
+        },
+        {
+            "name": "support.function.junopl",
+            "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b(?=\\s*\\()"
+        },
+        {
+            "name": "constant.numeric.junopl",
+            "match": "\\b\\d+(\\.\\d+)?\\b"
+        },
+        {
+            "name": "keyword.operator.junopl",
+            "match": "(==|!=|>=|<=|\\+=|-=|\\*=|/=|[+\\-*/%=<>!?])"
+        },
+        {
+            "name": "punctuation.bracket.junopl",
+            "match": "[()\\[\\]{}]"
+        },
+        {
+            "name": "punctuation.separator.junopl",
+            "match": "[,;:.]"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.junopl",
+                    "match": "//.*$",
+                    "captures": {
+                        "0": { "name": "punctuation.definition.comment.junopl" }
+                    }
+                },
+                {
+                    "name": "comment.block.junopl",
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.comment.begin.junopl" }
+                    },
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.comment.end.junopl" }
+                    }
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.junopl",
+            "begin": "\"",
+            "end": "\"",
+            "beginCaptures": {
+                "0": { "name": "punctuation.definition.string.begin.junopl" }
+            },
+            "endCaptures": {
+                "0": { "name": "punctuation.definition.string.end.junopl" }
+            },
+            "patterns": [
+                {
+                    "name": "constant.character.escape.junopl",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    }
+}

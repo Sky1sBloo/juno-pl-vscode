@@ -1,0 +1,58 @@
+{
+  "name": "juno-pl",
+  "displayName": "JunoPL",
+  "description": "Syntax highligher for JunoPL",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.138.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "juno-pl.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "languages": [
+      {
+        "id": "junopl",
+        "aliases": [
+          "JunoPL",
+          "junopl"
+        ],
+        "extensions": [
+          ".juno",
+          ""
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "junopl",
+        "scopeName": "source.junopl",
+        "path": "./juno.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@vscode/test-electron": "^3.0.0",
+    "eslint": "^9.39.5"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}
