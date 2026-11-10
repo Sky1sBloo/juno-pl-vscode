@@ -3,6 +3,8 @@
   "displayName": "JunoPL",
   "description": "Syntax highligher for JunoPL",
   "version": "0.0.1",
+  "publisher": "Sky1sBloo",
+  "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
     "url": "https://github.com/Sky1sBloo/juno-pl-vscode.git"
