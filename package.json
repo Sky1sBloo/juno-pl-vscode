@@ -7,12 +7,15 @@
     "type": "git",
     "url": "https://github.com/Sky1sBloo/juno-pl-vscode.git"
   },
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.138.0"
   },
   "categories": [
+    "Programming Languages",
     "Other"
   ],
+  "keywords": ["juno","junopl", "syntax", "highlighting"],
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
@@ -53,6 +56,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
     "@vscode/test-electron": "^3.0.0",
+    "@vscode/vsce": "^4.1.0",
     "eslint": "^9.39.5"
   },
   "overrides": {
