@@ -42,7 +42,7 @@
         },
         {
             "name": "keyword.control.junopl",
-            "match": "\\b(if|elif|else|for|from|to|by|repeat|while|break|do|on|emit)\\b"
+            "match": "\\b(if|elif|else|for|from|to|by|repeat|while|break|do|on|emit|inline)\\b"
         },
         {
             "name": "storage.type.junopl",
